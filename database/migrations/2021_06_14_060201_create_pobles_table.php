@@ -15,6 +15,13 @@ class CreatePoblesTable extends Migration
     {
         Schema::create('pobles', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('poblacio');
+            $table->string('superficie');
+            $table->string('densitat');
+            $table->string('altura');
+            $table->string('longitut');
+            $table->string('latitut');
             $table->timestamps();
         });
     }

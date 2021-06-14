@@ -14,7 +14,7 @@ class PobleController extends Controller
      */
     public function index()
     {
-        //
+        return view('pobles.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PobleController extends Controller
      */
     public function create()
     {
-        //
+        return view('pobles.create');
     }
 
     /**
@@ -35,7 +35,8 @@ class PobleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Poble::create($request->all());
+        return redirect()->route('pobles.index')->with('success','Poble afegit');
     }
 
     /**
@@ -46,7 +47,7 @@ class PobleController extends Controller
      */
     public function show(Poble $poble)
     {
-        //
+        return view('pobles.show');
     }
 
     /**
@@ -57,7 +58,7 @@ class PobleController extends Controller
      */
     public function edit(Poble $poble)
     {
-        //
+        return view('pobles.edit');
     }
 
     /**
