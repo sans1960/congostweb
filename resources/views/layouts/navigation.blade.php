@@ -15,8 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('pobles.index')" :active="request()->routeIs('ppobles.index')">
+                    <x-nav-link :href="route('pobles.index')" :active="request()->routeIs('pobles.index')">
                         {{ __('Pobles') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('images.index')" :active="request()->routeIs('images.index')">
+                        {{ __('Imatges') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -71,6 +74,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('pobles.index')" :active="request()->routeIs('pobles.index')">
                 {{ __('Pobles') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('images.index')" :active="request()->routeIs('images.index')">
+                {{ __('Imatges') }}
             </x-responsive-nav-link>
         </div>
 

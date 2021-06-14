@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PobleController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 Route::resource('/pobles',PobleController::class)->middleware(['auth'])->names('pobles');
+Route::resource('/imatges',ImageController::class)->middleware(['auth'])->names('images');

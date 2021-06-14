@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Image;
+use App\Models\Poble;
 
-class Poble extends Model
+class Image extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function image(){
-        return $this->morphMany(Image::class, 'modelo');
+    public function modelo(){
+        return $this->morphTo();
     }
 }
