@@ -35,7 +35,22 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image=new Image($request->all());
+        if ($request->hasFile('archivo')){
+        $file           = $request->file("archivo");
+
+       $nombrearchivo  = $file->getClientOriginalName();
+       $file->move(public_path("images/imagenes"),$nombrearchivo);
+        $image->archivo     = $nombrearchivo;
+        $image->modelo_id    = $request->modelo_id;
+        $image-> modelo_type    = $request->modelo_type;
+        $image-> descripcion    = $request->descripcion;
+
+    }
+       $image->save();
+
+
+       return redirect()->route('images.index')->with("success"," Imatge Creada" );
     }
 
     /**
